@@ -1,11 +1,14 @@
-# -*- coding: utf-8 -*-
-# 天气接口的自动检查（pytest）
-# 运行：E:\Python311\python.exe -m pytest E:\PythonProjects\weather_tool\test_weather.py -v
-# 作用：程序自己验证接口是否正常，不用人肉盯着看
+"""
+天气接口的自动检查（pytest）
+
+运行方式：
+    在终端执行：pytest test_weather.py -v
+作用：
+    程序自己验证接口是否正常，不用人肉盯着看。
+"""
 
 import requests
-
-import weather  # 导入我们写的 weather.py
+import weather
 
 
 def test_query_normal_city():
