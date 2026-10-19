@@ -1,5 +1,7 @@
 # Weather Tool（天气查询小工具）
 
+[![Python Test CI](https://github.com/chenrenfang/weather-tool/actions/workflows/test.yml/badge.svg)](https://github.com/chenrenfang/weather-tool/actions/workflows/test.yml)
+
 一个用 Python 调用免费天气接口的入门项目，支持命令行交互与 Web 网页两种使用方式。项目内置 TTL 缓存机制，并配套 pytest 接口自动化测试。
 
 ## 功能特色
