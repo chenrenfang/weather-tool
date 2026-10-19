@@ -1,0 +1,30 @@
+name: Python Test CI
+# 什么时候触发？当你 push 代码，或者提 PR 的时候
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+# 要干什么活？
+jobs:
+  test:
+    # 云端提供的操作系统（最新版 Ubuntu Linux）
+    runs-on: ubuntu-latest
+    steps:
+    # 1. 把代码拉取到云端电脑
+    - name: Checkout code
+      uses: actions/checkout@v4
+    # 2. 安装 Python 3.11 环境
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    # 3. 安装你的依赖包
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    # 4. 运行你的 pytest 测试！
+    - name: Run tests
+      run: |
+        pytest -q
